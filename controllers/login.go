@@ -13,6 +13,7 @@ import (
 // Login API to login a user (admin or student)
 func Login(givenUserType string) fiber.Handler {
 	return func(c *fiber.Ctx) (err error) {
+		// fmt.Printf("%#v\n", c.GetReqHeaders())
 		var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
 		defer cancel()
 

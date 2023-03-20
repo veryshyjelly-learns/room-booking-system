@@ -79,7 +79,7 @@ func SignUp(givenUserType string) fiber.Handler {
 
 			// Send the user as response
 			c.Status(fiber.StatusOK)
-			c.JSON(fiber.Map{"message": "success", "user": user})
+			c.JSON(fiber.Map{"message": "success", "data": user})
 
 		} else if givenUserType == "student" {
 			var user models.Student
@@ -122,7 +122,7 @@ func SignUp(givenUserType string) fiber.Handler {
 			database.DB.WithContext(ctx).Create(&user)
 			// Send the user as response
 			c.Status(fiber.StatusOK)
-			c.JSON(fiber.Map{"message": "success", "user": user})
+			c.JSON(fiber.Map{"message": "success", "data": user})
 
 		} else {
 			// If the user type is invalid
