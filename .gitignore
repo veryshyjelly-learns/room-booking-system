@@ -1,0 +1,5 @@
+# Local SQLite databases and journals
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
